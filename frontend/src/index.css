@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+/* ── Design tokens ─────────────────────────────────────────── */
+@theme {
+  --color-surface: #F8F8F8;
+  --color-primary: #111111;
+  --color-secondary: #666666;
+  --color-border: #E5E5E5;
+  --color-muted: #999999;
+  --font-sans: 'Inter', sans-serif;
+}
+
+/* ── Base resets ──────────────────────────────────────────── */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #111111;
+    background-color: #FFFFFF;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #111111;
+    color: #FFFFFF;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F8F8F8;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #111111;
+    border-radius: 3px;
+  }
+
+  input, textarea, select {
+    font-family: 'Inter', sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+}
+
+/* ── Reusable component classes ───────────────────────────── */
+@utility btn-primary {
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 0.75rem 2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  &:hover { background-color: #262626; }
+  &:active { transform: scale(0.98); }
+}
+
+@utility btn-outline {
+  border: 1px solid #000000;
+  color: #000000;
+  padding: 0.75rem 2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  &:hover { background-color: #000000; color: #FFFFFF; }
+  &:active { transform: scale(0.98); }
+}
+
+@utility btn-ghost {
+  color: #000000;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  &:hover { opacity: 0.6; }
+}
+
+@utility input-field {
+  width: 100%;
+  border: 1px solid #E5E5E5;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  background-color: #FFFFFF;
+  transition: border-color 0.3s ease;
+  &:focus { outline: none; border-color: #000000; }
+  &::placeholder { color: #999999; }
+}
+
+@utility section-padding {
+  padding: 4rem 1.5rem;
+  @media (min-width: 768px) { padding: 6rem 3rem; }
+  @media (min-width: 1024px) { padding: 6rem 6rem; }
+}
+
+@utility page-container {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@utility section-title {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #666666;
+  margin-bottom: 2rem;
+}
+
+@utility heading-editorial {
+  font-size: 2.25rem;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  line-height: 0.9;
+  @media (min-width: 768px) { font-size: 3.75rem; }
+  @media (min-width: 1024px) { font-size: 6rem; }
+}
