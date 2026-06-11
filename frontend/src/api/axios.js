@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://trendora.onrender.com',
+  baseURL: 'https://trendora-bjzp.onrender.com',
   headers: { 'Content-Type': 'application/json' },
   timeout: 15000,
 });
